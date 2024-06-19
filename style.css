@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.body-container-0001 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta según sea necesario */
+}
+
+
+.container-0001 {
+  background-color: #555;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+}
+
+.container-0001 > p {
+  font-size: 32px;
+}
+
+.question-0001 {
+  display: none;
+}
+
+.question-0001.active {
+  display: block;
+}
+
+.options-0001 {
+  position: relative;
+  padding-left: 40px;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.options-0001 input {
+  opacity: 0;
+}
+
+.checkmark-0001 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #555;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+
+.options-0001 input:checked ~ .checkmark-0001:after {
+  display: block;
+}
+
+.checkmark-0001:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 300ms ease-in-out 0s;
+}
+
+.options-0001 input[type="radio"]:checked ~ .checkmark-0001 {
+  background: #21bf73;
+  transition: 300ms ease-in-out 0s;
+}
+
+.options-0001 input[type="radio"]:checked ~ .checkmark-0001:after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-primary-0001 {
+  background-color: #555;
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
+.btn-primary-0001:hover {
+  background-color: #21bf73;
+  border: 1px solid #21bf73;
+}
+
+.btn-success-0001 {
+  padding: 5px 25px;
+  background-color: #21bf73;
+  color: #fff;
+  border: none;
+}
+
+@media (max-width: 576px) {
+  .question-0001 {
+    width: 100%;
+    word-spacing: 2px;
+  }
+}
